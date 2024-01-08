@@ -1,0 +1,11 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccesor
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/User_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>User id:@HttpContextAccesor.HttpContext.Request.Cookies["UID"]</p>
+<p>User Name:@HttpContextAccesor.HttpContext.Request.Cookies["UName"]</p>

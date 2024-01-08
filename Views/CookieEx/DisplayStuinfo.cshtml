@@ -1,0 +1,29 @@
+﻿@model WebApplication2.Models.viewModelEx
+@{
+    ViewData["Title"] = "DisplayStuinfo";
+    Layout = "~/Views/Shared/User_Layout.cshtml";
+}
+
+<h1>DisplayStuinfo</h1>
+
+<div>
+    student info
+</div>
+<p>
+    @Model.studinfo.id
+</p>
+<p>
+    @Model.studinfo.name
+</p>
+<p>
+    @Model.studinfo.EmailId
+</p>
+<div>
+    student info
+</div>
+<p>
+    @Model.studAddr.address
+</p>
+<p>
+    @Model.studAddr.city
+</p>

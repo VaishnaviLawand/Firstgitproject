@@ -1,0 +1,52 @@
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <table style="width:100%;background-color:aqua;text-align:center;border-radius:5px">
+            <tr >
+                <td style="text-align:center; font-size:25px;font-family:Algerian">
+                Welcome to web Application
+                </td>
+            </tr>
+        </table>
+        <table style="width:100%;background-color:skyblue;text-align:center;border-style:groove skyblue;border-radius:10px ;" >
+            <tr>
+                <td style="font-size:25px">
+                    @Html.ActionLink("Home","Home","Accounts")
+                </td>
+                <td style="font-size:25px">
+                    @Html.ActionLink("CookieEx","Index","CookieEx")
+                </td>
+                <td style="font-size:25px">
+                    @Html.ActionLink("Display","Display","Accounts")
+                </td>
+                <td style="font-size:25px">
+                    @Html.ActionLink("Logout","Logout","Accounts")
+                    </td>
+                 <td>Welcome Back:@HttpContextAccessor.HttpContext.Session.GetString("LoginName")</td>
+                 <td>Logintime:@HttpContextAccessor.HttpContext.Session.GetString("LoginTime")</td>
+            </tr>
+        </table>
+        <div style=" width:100%;border-style:groove gray">
+            @RenderBody()
+        </div>
+            <table style="width:100%;background-color:gray;text-align:center;border-style:groove gray;border-radius:20px; margin-top:400px">
+            <tr>
+                <td>
+                    <p>copyright </p>
+                </td>
+            </tr>
+        </table>
+      
+       
+    </div>
+</body>
+</html>
